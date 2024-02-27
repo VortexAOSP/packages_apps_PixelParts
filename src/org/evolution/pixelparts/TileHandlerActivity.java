@@ -39,8 +39,6 @@ public final class TileHandlerActivity extends Activity {
                     aIntent.setClass(this, AutoHbmActivity.class);
                 } else if (qsName.equals(FastChargeTileService.class.getName())) {
                     aIntent.setClass(this, FastChargeActivity.class);
-                } else if (qsName.equals(PixelTorchTileService.class.getName())) {
-                    aIntent.setClass(this, PixelTorchActivity.class);
                 } else {
                     aIntent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                     aIntent.setData(Uri.fromParts("package", qsTile.getPackageName(), null));
