@@ -29,7 +29,6 @@ import java.util.Locale;
 import org.evolution.pixelparts.Constants;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.utils.FileUtils;
-import org.evolution.pixelparts.utils.TileUtils;
 
 public class BatteryInfoFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener {
@@ -127,14 +126,6 @@ public class BatteryInfoFragment extends PreferenceFragmentCompat
             return true;
         } else if (item.getItemId() == R.id.battery_info_refresh) {
             mSharedPrefs.edit().putBoolean(Constants.KEY_BATTERY_INFO_REFRESH, isChecked).apply();
-            return true;
-        } else if (item.getItemId() == R.id.add_tile) {
-            TileUtils.requestAddTileService(
-                    getContext(),
-                    BatteryInfoTileService.class,
-                    R.string.battery_info_title,
-                    R.drawable.ic_battery_info_tile
-            );
             return true;
         } else {
             return super.onOptionsItemSelected(item);
